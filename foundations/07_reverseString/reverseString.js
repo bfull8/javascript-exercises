@@ -1,5 +1,9 @@
-const reverseString = function() {
-
+const reverseString = function (txt) {
+  let result = "";
+  for (let i = txt.length - 1; i >= 0; --i) {
+    result += txt.at(i);
+  }
+  return result;
 };
 
 // Do not edit below this line
