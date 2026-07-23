@@ -1,4 +1,4 @@
-const findTheOldest = function (arr) {
+/*const findTheOldest = function (arr) {
   let oldest = 0;
   let result = null;
   for (const person of arr) {
@@ -15,24 +15,23 @@ const findTheOldest = function (arr) {
     }
   }
   return result;
+};*/
+
+function getAge(person) {
+  let birth = person.yearOfBirth;
+  let death =
+    person.yearOfDeath === undefined
+      ? new Date().getFullYear()
+      : person.yearOfDeath;
+  let age = death - birth;
+  return age;
+}
+
+const findTheOldest = function (arr) {
+  return arr.reduce((oldest, person) => {
+    return getAge(person) > getAge(oldest) ? person : oldest;
+  });
 };
 
-findTheOldest([
-  {
-    name: "Carly",
-    yearOfBirth: 1942,
-    yearOfDeath: 1970,
-  },
-  {
-    name: "Ray",
-    yearOfBirth: 1962,
-    yearOfDeath: 2011,
-  },
-  {
-    name: "Jane",
-    yearOfBirth: 1912,
-    yearOfDeath: 1941,
-  },
-]);
 // Do not edit below this line
 module.exports = findTheOldest;
