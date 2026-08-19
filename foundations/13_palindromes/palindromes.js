@@ -1,4 +1,4 @@
-const palindromes = function (str) {
+/*const palindromes = function (str) {
   let l = 0;
   let r = str.length - 1;
   const alphanumerical = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -24,6 +24,18 @@ const palindromes = function (str) {
   }
   return true;
 };
+*/
+
+function palindromes(str) {
+  const alphanumerical = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+  let cleanedString = str.toLowerCase().split('').filter((character) => alphanumerical.includes(character)).join('');
+  let reversedString = cleanedString.split('').reverse().join('');
+
+  return cleanedString == reversedString;
+  console.log(reversedString);
+  console.log(cleanedString);
+}
 
 palindromes("A car, a man, a maraca.");
 
