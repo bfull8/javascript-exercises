@@ -33,8 +33,6 @@ function palindromes(str) {
   let reversedString = cleanedString.split('').reverse().join('');
 
   return cleanedString == reversedString;
-  console.log(reversedString);
-  console.log(cleanedString);
 }
 
 palindromes("A car, a man, a maraca.");
